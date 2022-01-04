@@ -17,12 +17,12 @@ def main():
      ctx = settings.get_snowflake_connection()
      cs = ctx.cursor()
      try:
-         sql = 'select * from "RETAIL_DATAWAREHOUSE"."DBO"."DIM_EMPLOYEE" order by employee_key  limit 10'
+         sql = 'select * from "DIM_EMPLOYEE" order by employee_key  limit 10'
          cs.execute(sql)
          df1 = cs.fetch_pandas_all()
          #print(df1.head(10))
          
-         sql = 'select * from "RETAIL_DATAWAREHOUSE"."DBO"."DIM_EMPLOYEE" order by employee_key limit 10'
+         sql = 'select * from "DIM_EMPLOYEE" order by employee_key limit 10'
          cs.execute(sql)
          df2 = cs.fetch_pandas_all()
          
